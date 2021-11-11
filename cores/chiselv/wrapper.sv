@@ -13,7 +13,7 @@ module rvfi_wrapper (
 
 	RVFI uut (
 		.clock    (clock),
-		.reset    (!reset),
+		.reset    (reset),
 
 		.io_imem_addr(mem_addr),
 		.io_imem_rdata(mem_rdata),

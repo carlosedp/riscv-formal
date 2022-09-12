@@ -1,9 +1,7 @@
 #!/bin/bash
+# rm -rf checks disasm.o disasm.s RVFITop.v
+# make -C ../../.. rvfi
+# cp -R ../../../generated_rvfi/*.v .
 rm -rf checks
-# mkdir generated
-# pushd ../../..
-# sbt "runMain chiselv.RVFITop" || exit
-# popd || exit
-# cp -R ../../../*.v ./generated
-docker run --rm -v "$(realpath ../../)":/src -w /src/cores/chiselv hdlc/formal python3 ../../checks/genchecks.py
-docker run --rm -v "$(realpath ../../)":/src -w /src/cores/chiselv hdlc/formal make -C checks -j"$(nproc)"
+docker run --rm -it -v "$(realpath ../../)":/src -w /src/cores/"$(basename $(realpath .))" gcr.io/hdl-containers/formal python3 ../../checks/genchecks.py
+docker run --rm -it -v "$(realpath ../../)":/src -w /src/cores/"$(basename $(realpath .))" gcr.io/hdl-containers/formal make -C checks -j"$(nproc)"

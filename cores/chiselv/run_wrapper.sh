@@ -1,0 +1,1 @@
+docker run --rm -it -v "$(realpath ../../)":/src -w /src/cores/"$(basename $(realpath .))" gcr.io/hdl-containers/formal $@

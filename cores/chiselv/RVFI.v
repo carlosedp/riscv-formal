@@ -1239,7 +1239,7 @@ module RVFICPUWrapper(
     end
   end
 endmodule
-module RVFITop(
+module RVFI(
   input         clock,
   input         reset,
   output [31:0] io_imem_addr,

@@ -11,7 +11,7 @@ module rvfi_wrapper (
 	(* keep *) wire [31:0] mem_wdata;
 	(* keep *) wire [3:0]  mem_wstrb;
 
-	RVFITop uut (
+	RVFI uut (
 		.clock    (clock),
 		.reset    (reset),
 
